@@ -482,3 +482,11 @@ in SYSTEMPATH\Exceptions\FrameworkException.php on line 39.
  6 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
  7 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
  8 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\laragon\\www\\Products\\public\\index.php')
+CRITICAL - 2023-09-21 15:33:13 --> Undefined array key "ProdId"
+in APPPATH\Controllers\ProductsController.php on line 24.
+ 1 APPPATH\Controllers\ProductsController.php(24): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "ProdId"', 'C:\\laragon\\www\\Products\\app\\Controllers\\ProductsController.php', 24)
+ 2 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\ProductsController->save()
+ 3 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ProductsController))
+ 4 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\laragon\\www\\Products\\public\\index.php')

@@ -25,7 +25,7 @@ class ProductsController extends BaseController
         $data = [
             'ProductName'=>$this->request->getVar('ProductName'),      
             'ProductDescription'=>$this->request->getVar('ProductDescription'),
-            'ProductDescription'=>$this->request->getVar('ProductDescription'),
+            'ProductCategory' => $this->request->getVar('ProductCategory'),
             'ProductQuantity'=>$this->request->getVar('ProductQuantity'),
             'ProductPrice'=>$this->request->getVar('ProductPrice'),
             ];
