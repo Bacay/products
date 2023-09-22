@@ -90,7 +90,7 @@
     </ul>
     <div class="form-container">
         <form action="/save" method="post">
-            <h2>Form</h2>
+            <h2>Product Form</h2>
             <label>Product Name</label>
             <input type="hidden" name="ProdId" value="<?= isset($pro) ? $pro['ProdId'] : '' ?>">
             <input type="text" name="ProductName" placeholder="Product Name" value="<?= isset($pro) ? $pro['ProductName'] : '' ?>">
@@ -117,6 +117,16 @@
             <div style="margin-top: 10px;"></div>
             <input type="submit" value="Save">
         </form>
+        <div class="form-container">
+        <form action="/saveCat" method="post">
+    <h2>Add New Category</h2>
+    <label>Category Name</label>
+    <input type="text" name="ProductCategory" placeholder="Category">
+    <br>
+    <input type="submit" value="Add Category">
+</form>
+
+    </div>
     </div>
     <div class="clear"></div>
 </body>
