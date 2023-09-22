@@ -5,30 +5,27 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Products</title>
     <style>
-       
-        body, table, .form-container {
+        body, ul, .form-container {
             font-family: arial, sans-serif;
         }
         h2 {
             text-align: center;
         }
 
-        
-        table {
-            border-collapse: collapse;
-            width: 70%;
+        ul {
+            list-style-type: none;
+            padding: 0;
             float: left;
+            width: 30%;
+            margin-top: 1px;
         }
 
-        td, th {
+        li {
             border: 1px solid #dddddd;
-            text-align: center;
+            margin-bottom: 5px;
             padding: 8px;
         }
 
-        tr:nth-child(even) {
-            background-color: #dddddd;
-        }
         .delete {
             color: red;
         }
@@ -38,8 +35,9 @@
             padding: 10px;
             margin-left: 20px;
             float: left;
-            width: 25%;
+            width: 60%;
         }
+
         .form-container label {
             display: block;
             font-weight: bold; 
@@ -50,21 +48,21 @@
             padding: 8px;
             width: 90%;
         }
-    
 
         .form-container input[type="submit"] {
             font-weight: bold;
         }
-        .form-container select {
-             border: 1px solid #dddddd;
-              padding: 8px;
-             width: 95%;
-}
 
-/* Style the submit button */
-.form-container input[type="submit"] {
-    font-weight: bold;
-}
+        .form-container select {
+            border: 1px solid #dddddd;
+            padding: 8px;
+            width: 93%;
+        }
+
+      
+        .form-container input[type="submit"] {
+            font-weight: bold;
+        }
 
         .clear {
             clear: both;
@@ -73,28 +71,18 @@
 </head>
 <body>
     <h2>Product Listing</h2>
-    <table>
-        <tr>
-            <th>Product Name</th>
-            <th>Description</th>
-            <th>Category</th>
-            <th>Quantity</th>
-            <th>Price</th>
-            <th>Actions</th>
-           
-        </tr>
+    <ul>
         <?php foreach ($product as $pr): ?>
-            <tr>
-                <td><?= $pr['ProductName'] ?></td>
-                <td><?= $pr['ProductDescription'] ?></td>
-                <td><?= $pr['ProductCategory'] ?></td>
-                <td><?= $pr['ProductQuantity'] ?></td>
-                <td><?= $pr['ProductPrice'] ?></td>
-                <td><a href="/delete/<?= $pr['ProdId'] ?>" class="delete">Delete</a> || <a href="/edit/<?= $pr['ProdId'] ?>">Update</a></td>
-               
-            </tr>
+            <li>
+                <strong>Product Name:</strong> <?= $pr['ProductName'] ?><br>
+                <strong>Description:</strong> <?= $pr['ProductDescription'] ?><br>
+                <strong>Category:</strong> <?= $pr['ProductCategory'] ?><br>
+                <strong>Quantity:</strong> <?= $pr['ProductQuantity'] ?><br>
+                <strong>Price:</strong> <?= $pr['ProductPrice'] ?><br>
+                <a href="/delete/<?= $pr['ProdId'] ?>" class="delete">Delete</a> || <a href="/edit/<?= $pr['ProdId'] ?>">Update</a>
+            </li>
         <?php endforeach; ?>
-    </table>
+    </ul>
     <div class="form-container">
         <form action="/save" method="post">
             <h2>Form</h2>
@@ -107,12 +95,12 @@
             <br>
             <label for="ProductCategory">Category</label>
             <select name="ProductCategory" id="ProductCategory">
-            <option value="Fresh Foods">Fresh Foods</option>
-            <option value="Packaged Foods">Packaged Foods</option>
-            <option value="Beverages">Beverages</option>
-            <option value="Household and Personal Care">Household and Personal Care</option>
-            <option value="Non-Food Items">Non-Food Items</option>
-            <option value="Non-Food Items">Others</option>
+                <option value="Fresh Foods">Fresh Foods</option>
+                <option value="Packaged Foods">Packaged Foods</option>
+                <option value="Beverages">Beverages</option>
+                <option value="Household and Personal Care">Household and Personal Care</option>
+                <option value="Non-Food Items">Non-Food Items</option>
+                <option value="Others">Others</option>
             </select>
             <br>
             <label>Quantity</label>
