@@ -48,6 +48,11 @@
             padding: 8px;
             width: 90%;
         }
+        .form-container input[type="number"] {
+            border: 1px solid #dddddd;
+            padding: 8px;
+            width: 90%;
+        }
 
         .form-container input[type="submit"] {
             font-weight: bold;
@@ -107,7 +112,7 @@
             <input type="text" name="ProductQuantity" placeholder="Quantity" value="<?= isset($pro) ? $pro['ProductQuantity'] : '' ?>">
             <br>
             <label>Price</label>
-            <input type="text" name="ProductPrice" placeholder="Price" value="<?= isset($pro) ? $pro['ProductPrice'] : '' ?>">
+            <input type="number" name="ProductPrice" placeholder="Price" value="<?= isset($pro) ? $pro['ProductPrice'] : '' ?>">
             <br>
             <div style="margin-top: 10px;"></div>
             <input type="submit" value="Save">
