@@ -100,12 +100,10 @@
             <br>
             <label for="ProductCategory">Category</label>
             <select name="ProductCategory" id="ProductCategory">
-                <option value="Fresh Foods">Fresh Foods</option>
-                <option value="Packaged Foods">Packaged Foods</option>
-                <option value="Beverages">Beverages</option>
-                <option value="Household and Personal Care">Household and Personal Care</option>
-                <option value="Non-Food Items">Non-Food Items</option>
-                <option value="Others">Others</option>
+                <option>Select a Category</option>
+                <?php foreach ($category as $cat) {
+                    echo "<option value =".$cat['ProductCategory'].">".$cat['ProductCategory']."</option>";
+                }?>
             </select>
             <br>
             <label>Quantity</label>
@@ -116,15 +114,26 @@
             <br>
             <div style="margin-top: 10px;"></div>
             <input type="submit" value="Save">
-        </form>
-        <div class="form-container">
+        </form> 
+        <div class="form-container1" style="margin-top: 20px;">
         <form action="/saveCat" method="post">
     <h2>Add New Category</h2>
     <label>Category Name</label>
-    <input type="text" name="ProductCategory" placeholder="Category">
+    <input type="hidden" name="CatId" value="<?= $cate['CatId'] ?? '' ?>">
+    <input type="text" name="ProductCategory" placeholder="Category" value="<?= $_POST['ProductCategory'] ?? $cate['ProductCategory'] ?? '' ?>">
     <br>
-    <input type="submit" value="Add Category">
+    <input type="submit" style="margin-top: 5px;" value="Add Category">
 </form>
+
+<h2>Product Category</h2>
+    <ul>
+        <?php foreach ($category as $cate): ?>
+            <li>
+            <strong>Category:</strong> <?= $cate['ProductCategory'] ?><br>
+                    <a href="/deleteCat/<?= $cate['CatId'] ?>" class="delete">Delete</a> || <a href="/editCat/<?= $cate['CatId'] ?>">Update</a>
+            </li>
+        <?php endforeach; ?>
+    </ul>
 
     </div>
     </div>
