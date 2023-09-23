@@ -125,7 +125,7 @@
     <input type="submit" style="margin-top: 5px;" value="Add Category">
 </form>
 
-<h2>Product Category</h2>
+<h2>Product Category List</h2>
     <ul>
         <?php foreach ($category as $cate): ?>
             <li>
